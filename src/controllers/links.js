@@ -11,8 +11,31 @@ async function createLink(req, res) {
     res.json(temp)
 }
 
+async function updateLinkById(req, res) {
+    const id = req.params.linkId
+    const link = req.body
+
+    await Link.findByIdAndUpdate(id, link)
+
+    res.json({
+        message: "link updated successfully!",
+        data: link
+    })
+}
+
+async function deleteLinkById(req, res) {
+    const id = req.params.linkId
+    await Link.findByIdAndDelete(id)
+    
+    res.json({
+        message: "link deleted successfully!"
+    })
+}
+
 
 module.exports = {
     getLinks,
-    createLink
+    createLink,
+    updateLinkById,
+    deleteLinkById
 }
