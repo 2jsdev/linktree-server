@@ -4,9 +4,9 @@ const { getLinks, createLink, updateLinkById, deleteLinkById } = require('../con
 
 const router = express.Router()
 
-router.get('/links', getLinks)
-router.post('/links', createLink)
-router.put('/links/:linkId', updateLinkById)
-router.delete('/links/:linkId', deleteLinkById)
+router.get('/api/links', getLinks)
+router.post('/api/links', createLink)
+router.put('/api/links/:linkId', updateLinkById)
+router.delete('/api/links/:linkId', deleteLinkById)
 
 module.exports = router
